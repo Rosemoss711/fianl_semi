@@ -34,9 +34,12 @@ public class InformationController extends HttpServlet {
 		if(uri.equals("/toInformation.info")) { //FAQ페이지 요청
 			InformationDAO dao = new InformationDAO();
 			try {
-				ArrayList<InformationDTO> list = dao.selectAll();
+				int curPage = Integer.parseInt(request.getParameter("curPage"));
+				HashMap map = dao.getPageNavi(curPage);
+				ArrayList<InformationDTO> list = dao.selectAll(curPage * 10 - 9, curPage * 10);
 
 				request.setAttribute("list", list);
+				request.setAttribute("naviMap", map);
 			}catch(Exception e) {
 				e.printStackTrace();
 			}			
@@ -56,7 +59,7 @@ public class InformationController extends HttpServlet {
 				
 				if(rs > 0) {
 
-					response.sendRedirect("/toInformation.info");
+					response.sendRedirect("/toInformation.info?curPage=1");
 
 				}
 			}catch(Exception e) {
@@ -121,7 +124,7 @@ public class InformationController extends HttpServlet {
 				int rs = dao.delete(qna_seq);
 				if(rs > 0) {
 					// 삭제완료 후에는 게시글 목록을 요청
-					response.sendRedirect("/toInformation.info");
+					response.sendRedirect("/toInformation.info?curPage=1");
 				}
 			}catch(Exception e) {	
 				e.printStackTrace();

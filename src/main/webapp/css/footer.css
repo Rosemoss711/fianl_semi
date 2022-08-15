@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.footer {
+	font-family: 'LeferiPoint-WhiteObliqueA';
+	font-weight: 600;
+	font-size: small;
+	color: #709c91;
+	border-top: 1px solid #c9d4a9;
+}
+
+.footer .row {
+	border-bottom: 1px solid #c9d4a9;
+}
+
+.footer .footerInfo {
+	padding-block: 3%;
+	text-align: center;
+}
+
+.footerMenu {
+	padding-block: 2%;
+	text-align: center;
+}
+
+.footerMenu a {
+	color: #709c91;
+	text-decoration: none;
+}

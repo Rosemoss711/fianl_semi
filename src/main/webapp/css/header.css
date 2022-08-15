@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+/* 헤더 */
+.cls_header {
+	height: 150px;
+	width: 100%;
+	margin: 0%;
+	background-color: #BFFFF0;
+	color: #97C4B8;
+	align-items: center;
+	font-family: '양진체';
+	text-align: center;
+}
+
+.cls_header a {
+	color: #97C4B8;
+}
+
+.cls_header a:hover {
+	color: #c9d4a9;
+}
+
+.dropdownBtn {
+	background-color: #F0FFC2 !important;
+	color: #97C4B8;
+	border: 1px solid white;
+}
+
+.dropdownBtn:hover {
+	color: #9be5d2;
+}
+
+.headDropdown {
+	background-color: #F0FFC2 !important;
+}
+
+.headMenu {
+	justify-content: end;
+}
+
+/* 로고 */
+.logoImg {
+	padding: 0%;
+	filter: invert(87%) sepia(8%) saturate(806%) hue-rotate(113deg)
+		brightness(86%) contrast(86%);
+}
+
+.logoImg:hover {
+	filter: invert(75%) sepia(12%) saturate(803%) hue-rotate(52deg)
+		brightness(99%) contrast(80%);
+}
+/* 로고 이미지 사이즈 */
+.logoImg #logoImg {
+	width: 50%;
+	height: 50%;
+}
+/* 로고 효과 */
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+    .logoImg {
+        position: relative;
+        display: inline-block;
+        color: #fff;
+        text-transform: uppercase;
+        animation: waviy 1s infinite;
+        animation-delay: calc(.1s * var(--i));
+    }
+    @keyframes waviy {
+        0%,
+        40%,
+        100% {
+            transform: translateY(0)
+        }
+        20% {
+            transform: translateY(-20px)
+        }
+    }
+/* 로고 효과 끝 */
+/* 네비바 */
+.navbar {
+	background-color: #F0FFC2 !important;
+	font-family: '양진체';
+}
+
+.container-fluid a {
+	color: #97C4B8 !important;
+}
+
+.container-fluid a:hover {
+	color: #9be5d2 !important;
+}
+
+.container-fluid button {
+	background-color: #F0FFC2 !important;
+	color: #97C4B8 !important;
+}
+
+.navDropdown {
+	border: 1px solid white;
+	background-color: #d5fcf3 !important;
+}
+
+.container-fluid button:hover {
+	background-color: #97C4B8 !important;
+	color: #F0FFC2 !important;
+}
+
+.container-fluid span {
+	filter: invert(40%) sepia(4%) saturate(3907%) hue-rotate(113deg)
+		brightness(103%) contrast(66%);
+}
+
+.navSearchInput {
+	border: 1px solid white;
+}
+
+.navSearchInput::placeholder {
+	color: #FFE4C0;
+}

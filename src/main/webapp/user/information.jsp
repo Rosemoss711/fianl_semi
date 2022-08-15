@@ -19,7 +19,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"
 	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 	crossorigin="anonymous"></script>
-<title>FAQ 수정</title>
+<title>FAQ</title>
 </head>
 <style>
 /* 폰트 */
@@ -58,123 +58,6 @@
 	margin: auto;
 }
 
-/* 헤더 */
-.cls_header {
-	height: 150px;
-	width: 100%;
-	margin: 0%;
-	background-color: #BFFFF0;
-	color: #97C4B8;
-	align-items: center;
-	font-family: '양진체';
-	text-align: center;
-}
-
-.cls_header a {
-	color: #97C4B8;
-}
-
-.cls_header a:hover {
-	color: #c9d4a9;
-}
-
-.dropdownBtn {
-	background-color: #F0FFC2 !important;
-	color: #97C4B8;
-	border: 1px solid white;
-}
-
-.dropdownBtn:hover {
-	color: #9be5d2;
-}
-
-.headDropdown {
-	background-color: #F0FFC2 !important;
-}
-
-.headMenu {
-	justify-content: end;
-}
-
-/* 로고 */
-.logoImg {
-	padding: 0%;
-	filter: invert(87%) sepia(8%) saturate(806%) hue-rotate(113deg)
-		brightness(86%) contrast(86%);
-}
-
-.logoImg:hover {
-	filter: invert(75%) sepia(12%) saturate(803%) hue-rotate(52deg)
-		brightness(99%) contrast(80%);
-}
-/* 로고 이미지 사이즈 */
-.logoImg #logoImg {
-	width: 50%;
-	height: 50%;
-}
-/* 로고 효과 */
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
-    .logoImg {
-        position: relative;
-        display: inline-block;
-        color: #fff;
-        text-transform: uppercase;
-        animation: waviy 1s infinite;
-        animation-delay: calc(.1s * var(--i));
-    }
-    @keyframes waviy {
-        0%,
-        40%,
-        100% {
-            transform: translateY(0)
-        }
-        20% {
-            transform: translateY(-20px)
-        }
-    }
-/* 로고 효과 끝 */
-/* 네비바 */
-.navbar {
-	background-color: #F0FFC2 !important;
-	font-family: '양진체';
-}
-
-.container-fluid a {
-	color: #97C4B8 !important;
-}
-
-.container-fluid a:hover {
-	color: #9be5d2 !important;
-}
-
-.container-fluid button {
-	background-color: #F0FFC2 !important;
-	color: #97C4B8 !important;
-}
-
-.navDropdown {
-	border: 1px solid white;
-	background-color: #d5fcf3 !important;
-}
-
-.container-fluid button:hover {
-	background-color: #97C4B8 !important;
-	color: #F0FFC2 !important;
-}
-
-.container-fluid span {
-	filter: invert(40%) sepia(4%) saturate(3907%) hue-rotate(113deg)
-		brightness(103%) contrast(66%);
-}
-
-.navSearchInput {
-	border: 1px solid white;
-}
-
-.navSearchInput::placeholder {
-	color: #FFE4C0;
-}
-
 /* 공백 */
 .empty {
 	background-color: white;
@@ -187,7 +70,7 @@
 	font-weight: 600;
 }
 
-#btnWrite {
+#btnWrite, .btnModify, .btnDelete {
 	background-color: #73b1a1;
 	border: 1px solid #F0FFC2;
 	border-radius: 0.25rem;
@@ -201,28 +84,34 @@
 	margin: 5px;
 }
 
-#btnWrite:hover {
+#btnWrite:hover, .btnModify:hover, .btnDelete:hover {
 	background-color: #F0FFC2;
 	border: 1px solid #73b1a1;
 	color: #73b1a1;
 }
 
 /* 목록 */
-.table-bordered {
-	border-right: 1px solid #e6ebd8;
-}
-
-.body-board {
-	border-bottom: 1px solid #e6ebd8;
-}
-
-thead {
-	background-color: #F0FFC2;
-	color: #74a598;
-	text-align: center;
-	border-bottom: 2px solid #74a598;
-}
-
+.accordion{
+	width: 80%;
+	margin: auto;
+	}
+.accordion-button {
+    color: #97C4B8;
+    background-color: #f9ffe7;
+    font-family: 'LeferiPoint-WhiteA';
+    font-weight: 600;
+    }
+.accordion-button:not(.collapsed) {
+    color: #97C4B8;
+    background-color: #f9ffe7;
+    font-family: 'LeferiPoint-WhiteA';
+    font-weight: 600;
+    }
+.accordion-body{
+	font-family: 'LeferiPoint-WhiteA';
+    font-weight: 600;
+	}
+    
 .title {
 	color: #97C4B8;
 	border-bottom: 1px solid #97C4B8;
@@ -252,147 +141,12 @@ thead {
 	color: #5a9284;
 	background-color: #F0FFC2;
 }
-
-/* footer */
-.footer {
-	font-family: 'LeferiPoint-WhiteObliqueA';
-	font-weight: 600;
-	font-size: small;
-	color: #709c91;
-	border-top: 1px solid #c9d4a9;
-}
-
-.footer .row {
-	border-bottom: 1px solid #c9d4a9;
-}
-
-.footer .footerInfo {
-	padding-block: 3%;
-	text-align: center;
-}
-
-.footerMenu {
-	padding-block: 2%;
-	text-align: center;
-}
-
-.footerMenu a {
-	color: #709c91;
-	text-decoration: none;
-}
-/* footer 끝 */
 </style>
 
 <body>
 	<div class="container">
 		<!-- 헤더 -->
-	<div class="row cls_header">
-			<div class="col-3 logoImg">
-				<a href="/home"> <img id="logoImg" src="../imgs/dpt_Logo.png">
-				</a>
-			</div>
-			<c:choose>
-				<c:when
-					test="${loginSession.user_auth eq 'member' || loginSession.user_auth eq 'admin'}">
-					<div class="d-none d-md-block col-2"></div>
-					<div class="col-3 p-0 headMenu d-flex justify-content-center">
-						<span>${loginSession.user_name} 님 환영합니다!</span>
-					</div>
-					<div class="col p-0 headMenu d-flex justify-content-center">
-						<a href="/toMypage.user" style="text-decoration: none;"> <span>마이페이지</span>
-						</a>
-					</div>
-					<div class="col p-0 headMenu d-flex justify-content-center">
-						<a href="/logout.user" style="text-decoration: none;"> <span>로그아웃</span>
-						</a>
-					</div>
-				</c:when>
-				<c:when test="${loginSession.user_auth eq 'manager'}">
-					<div class="d-none d-md-block col-2"></div>
-					<div class="col-3 p-0 headMenu d-flex justify-content-center">
-						<span>관리자님 환영합니다!</span>
-					</div>
-					<div class="col p-0 headMenu d-flex justify-content-center">
-						<a href="/toSendmail.manager" style="text-decoration: none;">
-							<span>메일보내기</span>
-						</a>
-					</div>
-					<div class="col p-0 headMenu d-flex justify-content-center">
-						<a href="/userSerch.manager?curPage=1"
-							style="text-decoration: none;"> <span>회원 검색</span>
-						</a>
-					</div>
-					<div class="col p-0 headMenu d-flex justify-content-center">
-						<a href="/logout.user" style="text-decoration: none;"> <span>로그아웃</span>
-						</a>
-					</div>
-				</c:when>
-				<c:otherwise>
-					<div class="d-none d-md-block col-5"></div>
-					<div class="col p-0 headMenu d-flex justify-content-center">
-						<a href="/login.user" style="text-decoration: none;"> <span>로그인</span>
-						</a>
-					</div>
-					<div class="col p-0 headMenu d-flex justify-content-center">
-						<a href="/toSignup.user" style="text-decoration: none;"> <span>회원가입</span>
-						</a>
-					</div>
-				</c:otherwise>
-			</c:choose>
-			<div class="col p-0 headMenu d-flex justify-content-center">
-				<button type="button" class="btn dropdownBtn dropdown-toggle"
-					data-bs-toggle="dropdown" aria-expanded="false">고객센터</button>
-				<ul class="dropdown-menu headDropdown">
-					<li><a class="dropdown-item" href="/toInformation.info">자주
-							묻는 질문</a></li>
-					<c:if test="${loginSession.user_auth eq 'manager'}">
-						<li><a class="dropdown-item"
-							href="/modifyList.food?curPage=1">음식 프로로션</a></li>
-					</c:if>
-				</ul>
-			</div>
-		</div>
-		<!-- 헤더 끝 -->
-		<!-- 네비 -->
-		<div class="row cls_nav">
-			<div class="col">
-				<nav class="navbar navbar-expand-lg navbar-dark bg-warning">
-					<div class="container-fluid">
-						<button class="navbar-toggler" type="button"
-							data-bs-toggle="collapse"
-							data-bs-target="#navbarSupportedContent"
-							aria-controls="navbarSupportedContent" aria-expanded="false"
-							aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-						</button>
-						<div class="collapse navbar-collapse" id="navbarSupportedContent">
-							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-								<li class="nav-item"><a class="nav-link active"
-									aria-current="page" href="/toColumnPage.column?curPage=1">칼럼</a></li>
-								<c:choose>
-									<c:when
-										test="${loginSession.user_auth eq 'member' || loginSession.user_auth eq 'admin' || loginSession.user_auth eq 'manager'}">
-										<li class="nav-item"><a class="nav-link"
-											href="/listLogin.gym">내 주변 운동시설</a></li>
-										<li class="nav-item"><a class="nav-link"
-											href="/listLogin.food">특가 식품</a></li>
-									</c:when>
-									<c:otherwise>
-										<li class="nav-item"><a class="nav-link" href="/list.gym">내
-												주변 운동시설</a></li>
-										<li class="nav-item"><a class="nav-link"
-											href="/list.food">특가 식품</a></li>
-									</c:otherwise>
-								</c:choose>
-								<li class="nav-item"><a class="nav-link" href="/toList.part">근육별 운동법
-										</a></li>
-							</ul>
-						</div>
-					</div>
-				</nav>
-			</div>
-		</div>
-		<!-- 네비 끝 -->
+		<jsp:include page="/frame/header.jsp"/>
 		<!-- FAQ 리스트 -->
 		<div class="container cls_body">
 		<div class="d-flex justify-content-center">
@@ -400,42 +154,50 @@ thead {
 				<h3>FAQ</h3>
 			</div>
 		</div>
-			<c:if test="${loginSession.user_auth eq 'manager'}">
-				<div class="row boxBtn-top">
-					<div class="col d-flex justify-content-end">
-						<button class="btn" id="btnWrite" type="button">글쓰기</button>
-					</div>
+		<c:if test="${loginSession.user_auth eq 'manager'}">
+			<div class="row boxBtn-top">
+				<div class="col d-flex justify-content-end">
+					<button class="btn" id="btnWrite" type="button" style="margin-right: 130px;">글쓰기</button>
 				</div>
-			</c:if>
-			<table class="table table-bordered">
-				<thead>
-					<tr>
-						<th class="col-md-5">제목</th>
-					</tr>
-				</thead>
-				<tbody class="body-board">
-					<c:choose>
-						<c:when test="${list.size() == 0}">
-							<tr>
-								<td colspan=5>등록된 게시글이 없습니다.</td>
-							</tr>
-						</c:when>
-						<c:otherwise>
-							<c:forEach items="${list}" var="dto">
-								<tr>
-									<td class="d-none" style="text-align: center;">${dto.qna_seq}</td>
-									<td style="text-align: center;">
-										<a href="view.info?qna_seq=${dto.qna_seq}" style="text-decoration:none; color:black;">${dto.qna_title}</a>
-									</td>
-								</tr>
-							</c:forEach>
-						</c:otherwise>
-					</c:choose>
-				</tbody>
-			</table>
+			</div>
+		</c:if>
+			<div class="accordion justify-content-center" id="accordionExample">
+				<c:choose>
+					<c:when test="${list.size() == 0}">
+						<tr>
+							<td colspan=5>등록된 게시글이 없습니다.</td>
+						</tr>
+					</c:when>
+					<c:otherwise>
+						<c:forEach items="${list}" var="dto">
+  							<div class="accordion-item">
+    							<h2 class="accordion-header" id="headingOne">
+      							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+      								data-bs-target="#collapse${dto.qna_seq}" aria-expanded="false">
+        							${dto.qna_title}
+      							</button>
+    							</h2>
+    							<div id="collapse${dto.qna_seq}" class="accordion-collapse collapse" aria-labelledby="headingOne" 
+    								data-bs-parent="#accordionExample">
+      								<div class="accordion-body">
+        								${dto.qna_content}
+        								<c:if test="${loginSession.user_auth eq 'manager'}">
+											<div class="row btnBox-M">
+												<div class="col d-flex justify-content-end">
+													<a class="btnModify" style="text-decoration: none;" href="/view.info?qna_seq=${dto.qna_seq}">수정</a>
+												</div>
+											</div>
+										</c:if>
+      								</div>
+    							</div>
+ 							</div>
+						</c:forEach>
+					</c:otherwise>
+				</c:choose>
+  			</div>
 		</div>
 		<%--  페이징 --%>
-		<div class="row">
+		<div class="row mt-5">
 			<div class="col d-flex justify-content-center">
 				<nav aria-label="Page navigation example">
 					<ul class="pagination">
@@ -458,38 +220,13 @@ thead {
 		</div>
 		<!-- FAQ 리스트 끝-->
 		<!-- footer -->
-        <div class="container footer">
-            <div class="row footerInfo">
-                <div class="col-6">
-                    제휴 및 서비스 이용문의<br>
-                    <h3 style="margin-top: 10px; font-weight: 600;">1588-0000</h3>
-                    AM 09:00 - PM 06:00<br>
-                    토 일 공휴일 휴무
-                </div>
-                <div class="col-6">
-                    (주)당퍼트<br>
-                    서울특별시 영등포구 선유동2로 57<br>
-                    대표 : 홍신영<br>
-                    사업자번호 : 123-45-67890<br>
-                    통신판매번호 : 제2000-서울영등포구-0000호<br>
-                    kh.projectmail@gmail.com<br>
-                </div>
-            </div>
-            <div class="row footerMenu">
-                <div class="col"><a href="/footer/ToS.jsp">이용약관</a></div>
-                <div class="col"><a href="/footer/privacyPolicy.jsp">개인정보처리방침</a></div>
-                <div class="col"><a href="/footer/location-based-service.jsp">위치정보이용약관</a></div>
-                <div class="col"><a href="/toInformation.info?curPage=1">센터등록요청하기</a></div>
-                <div class="col"><a href="/toInformation.info?curPage=1">문의하기</a></div>
-            </div>
-            <p>Copyright ⓒ Dangpert Co., Ltd. All rights reserved.</p>
-        </div>
-        <!-- footer 끝 -->
+        <jsp:include page="/frame/footer.jsp"/>
 	</div>
 	<script>
 		$("#btnWrite").on("click", function() {
 			location.href = "/write.info";
 		})
+		
 	</script>
 </body>
 </html>

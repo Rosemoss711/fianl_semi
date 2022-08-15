@@ -57,11 +57,15 @@ public class InformationDAO {
 		}
 	}
 
-	public ArrayList<InformationDTO> selectAll() throws Exception{
-		String sql = "select * from tbl_infomation";
+	public ArrayList<InformationDTO> selectAll(int start, int end) throws Exception{
+		String sql = "select * from (select tbl_infomation.*, row_number() over(order by qna_seq desc) as num from tbl_infomation)"
+				+ " where num between ? and ?";
 
 		try(Connection con = bds.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(sql)){
+			
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
 			
 			ResultSet rs = pstmt.executeQuery();
 			ArrayList<InformationDTO> list = new ArrayList<>();
